@@ -38,11 +38,22 @@ function menuComp(array){
   const menuParentDiv = document.createElement('div');
   const ulList = document.createElement('ul');
 
+  menuParentDiv.append(ulList);
+  menuParentDiv.classList.add('menu');
+
   array.forEach((arrayValue) => {
     let uls = document.createElement('li'); //variable changes so you use 'let'
     uls.textContent = arrayValue;
     ulList.append(uls);
   });
+  
+  const menuBttn = document.querySelector('.menu-button');
+  menuBttn.addEventListener('click', () => {
+    menuParentDiv.classList.toggle('menu--open');
+  });
+
+  return menuParentDiv;
 
 }
-
+const htmlHeader = document.querySelector('.header');
+htmlHeader.append(menuComp(menuItems));
