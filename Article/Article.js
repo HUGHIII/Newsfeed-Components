@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Professional Software Development in 3055',
+    date: 'December 103rd, 3055',
+    firstParagraph: ` years are now 1,380 days long years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long`,
+
+    secondParagraph: `years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long `,
+
+    thirdParagraph: `years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long ` 
+        }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
