@@ -118,16 +118,11 @@ function compCreate(title, date, firstParagraph, secondParagraph, thirdParagraph
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
 
-const prgrphOne = document.createElement('p');
+  const prgrphOne = document.createElement('p');
   const prgrphTwo = document.createElement('p');
   const prgrphThree = document.createElement('p');
-
-const expandButton = document.createElement('span');
-  
-article.classList.add('article');
-  articleDate.classList.add('date');
-  
-article.classList.add('expandButton');
+  const expButton = document.createElement('span');
+ 
 
 
 
@@ -136,7 +131,26 @@ articleParent.append(articleDate);
 articleParent.append(prgrphOne);
 articleParent.append(prgrphTwo);
 articleParent.append(prgrphThree);
-articleParent.append(expandButton);
+articleParent.append(expButton);
 
 
+
+ 
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  article.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  prgrphOne.textContent = firstParagraph;
+  prgrphTwo.textContent = secondParagraph;
+  prgrphThree.textContent = thirdParagraph;
+
+return articleParent;
 }
+
+const htmlArticles = document.querySelector('.articles');
+
+data.map (element => {
+htmlArticles.append(compCreate(element.title, element.date,))
+})
