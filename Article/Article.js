@@ -117,7 +117,6 @@ function compCreate(title, date, firstParagraph, secondParagraph, thirdParagraph
   const articleParent = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
-
   const prgrphOne = document.createElement('p');
   const prgrphTwo = document.createElement('p');
   const prgrphThree = document.createElement('p');
@@ -134,23 +133,30 @@ articleParent.append(prgrphThree);
 articleParent.append(expButton);
 
 
-
+ articleParent.classList.add('article');
+ articleDate.classList.add('date');
+ expButton.classList.add('expandButton');
  
-  article.classList.add('article');
-  articleDate.classList.add('date');
-  article.classList.add('expandButton');
+  
 
   articleTitle.textContent = title;
   articleDate.textContent = date;
   prgrphOne.textContent = firstParagraph;
   prgrphTwo.textContent = secondParagraph;
   prgrphThree.textContent = thirdParagraph;
+  expButton.textContent = 'Click To Expand';
+
+
+  expButton.addEventListener('click', event => {
+    articleParent.classList.toggle('article-open')
+  });
 
 return articleParent;
 }
 
 const htmlArticles = document.querySelector('.articles');
+console.log(htmlArticles);
 
-data.map (element => {
-htmlArticles.append(compCreate(element.title, element.date,))
+data.map( element => {
+htmlArticles.append(compCreate(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph ))
 })
