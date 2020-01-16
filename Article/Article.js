@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Professional Software Development in 3055',
+    date: 'December 103rd, 3055',
+    firstParagraph: ` years are now 1,380 days long years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long`,
+
+    secondParagraph: `years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long `,
+
+    thirdParagraph: `years are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days longyears are now 1,380 days long ` 
+        }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +121,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function compCreate(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const articleParent = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const prgrphOne = document.createElement('p');
+  const prgrphTwo = document.createElement('p');
+  const prgrphThree = document.createElement('p');
+  const expButton = document.createElement('span');
+ 
+
+
+
+articleParent.append(articleTitle);
+articleParent.append(articleDate);
+articleParent.append(prgrphOne);
+articleParent.append(prgrphTwo);
+articleParent.append(prgrphThree);
+articleParent.append(expButton);
+
+
+ articleParent.classList.add('article');
+ articleDate.classList.add('date');
+ expButton.classList.add('expandButton');
+ 
+  
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  prgrphOne.textContent = firstParagraph;
+  prgrphTwo.textContent = secondParagraph;
+  prgrphThree.textContent = thirdParagraph;
+  expButton.textContent = 'Click To Expand';
+
+
+  expButton.addEventListener('click', event => {
+    articleParent.classList.toggle('article-open')
+  });
+
+return articleParent;
+}
+
+const htmlArticles = document.querySelector('.articles');
+console.log(htmlArticles);
+
+data.map( element => {
+htmlArticles.append(compCreate(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph ))
+})
